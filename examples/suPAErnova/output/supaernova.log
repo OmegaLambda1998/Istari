@@ -1,0 +1,11 @@
+[1;30m[   DEBUG][0m logging.py | [38;5;8mSetup logging with verbose logs[0m
+[1;30m[    INFO][0m logging.py | [32mLogging to /home/patricka/PARA/Projects/Istari/examples/suPAErnova/output/supaernova.log[0m
+[1;30m[   DEBUG][0m logging.py | [38;5;8mRunning DATA with opts: {'data_dir': 'data', 'meta': 'meta.csv', 'idr': 'IDR_eTmax.txt', 'mask': 'mask_info_wmin_wmax.txt'}[0m
+[1;30m[   DEBUG][0m logging.py | [38;5;8mWriting DATA opts to /home/patricka/PARA/Projects/Istari/examples/suPAErnova/output/DATA/DATA.toml[0m
+[1;30m[    INFO][0m logging.py | [32mRunning DATA[0m
+[1;30m[   DEBUG][0m logging.py | [38;5;8mGathering metadata[0m
+[1;30m[   DEBUG][0m logging.py | [38;5;8mGathering additional metadata[0m
+[1;30m[   DEBUG][0m logging.py | [38;5;8mCalculating SN Mask[0m
+[1;30m[   DEBUG][0m logging.py | [38;5;8mMerging per-SN SALT metadata[0m
+[1;30m[   ERROR][0m logging.py | [1;31mError getting results of DATA: Data has not been generated[0m
+[1;30m[    INFO][0m logging.py | [32mFinished running DATA[0m

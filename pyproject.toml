@@ -1,0 +1,46 @@
+[project]
+name = "istari"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Patrick Armstrong", email = "patrick.james.1998@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "click>=8.1.8",
+]
+
+[dependency-groups]
+suPAErnova = [
+    "suPAErnova",
+]
+
+[project.scripts]
+istari = "istari:main"
+suPAErnova = "suPAErnova:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+# === Tools ===
+
+# --- LSP: BasedPyRight ---
+[tool.basedpyright]
+
+# --- CMP: Ruff ---
+[tool.ruff]
+
+# --- Lint: Ruff ---
+[tool.ruff.lint]
+
+# --- Format: Ruff ---
+[tool.ruff.format]
+
+# --- Package Management: UV ---
+[tool.uv.workspace]
+members = ["packages/suPAErnova"]
+
+[tool.uv.sources]
+suPAErnova = { workspace = true }
