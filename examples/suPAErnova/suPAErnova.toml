@@ -1,5 +1,10 @@
 [DATA]
+# Required keys
 data_dir = "data"
 meta = "meta.csv"
 idr = "IDR_eTmax.txt"
 mask = "mask_info_wmin_wmax.txt"
+
+# Optional keys
+plot_spectra = true
+
