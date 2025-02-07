@@ -6,5 +6,5 @@ idr = "IDR_eTmax.txt"
 mask = "mask_info_wmin_wmax.txt"
 
 # Optional keys
-plot_spectra = true
+# plot_spectra = true
 

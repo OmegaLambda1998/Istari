@@ -26,21 +26,114 @@ build-backend = "hatchling.build"
 
 # === Tools ===
 
-# --- LSP: BasedPyRight ---
-[tool.basedpyright]
-
-# --- CMP: Ruff ---
-[tool.ruff]
-
-# --- Lint: Ruff ---
-[tool.ruff.lint]
-
-# --- Format: Ruff ---
-[tool.ruff.format]
-
 # --- Package Management: UV ---
 [tool.uv.workspace]
 members = ["packages/suPAErnova"]
 
 [tool.uv.sources]
 suPAErnova = { workspace = true }
+
+# --- LSP: BasedPyRight ---
+[tool.basedpyright]
+# Type Evaluation Settings
+analyzeUnannotatedFunctions = true
+strictParameterNoneValue = true
+deprecateTypingAliases = true
+strictGenericNarrowing = true
+
+# Don't report unknown types
+# Otherwise packages which are untyped blow up your diagnostics
+reportUnknownParameterType = false
+reportUnknownArgumentType = false
+reportUnknownLambdaType = false
+reportUnknownVariableType = false
+reportUnknownMemberType = false
+
+# Don't report unused call results
+# Stops errors around functions with side-effects
+# Like matplotlib
+reportUnusedCallResult = false
+
+# Don't report when objects are of type Any
+reportAny = false
+reportExplicitAny = false
+
+
+# --- CMP: Ruff ---
+[tool.ruff]
+# Enumerate all fixed violations.
+show-fixes = true
+
+# Disable application of unsafe fixes.
+unsafe-fixes = true
+
+# --- Format: Ruff ---
+[tool.ruff.format]
+# Enable preview style formatting
+preview = true
+
+# Enable reformatting of code snippets in docstrings.
+docstring-code-format = true
+
+# --- Lint: Ruff ---
+[tool.ruff.lint]
+# Enable preview features
+preview = true
+
+# Show all lint rules (except preview) by default
+select = ["ALL"]
+
+# Rules to ignore
+ignore = [
+    "E501", # Line too long 
+    "ERA001", # Found commented out code
+    "G004", # Logging statement uses f-string
+    "N999", # Invalid module name
+]
+
+# Consider all rules fixable
+fixable = ["ALL"]
+
+# Except these rules
+unfixable = [
+    "F401", # unused-import, will remove unused imports
+    "F841" # unused-variable, will remove unused variables not prepended with an `_`
+]
+
+# --- Flake8 ---
+# Copyright Author
+[tool.ruff.lint.flake8-copyright]
+author = "Patrick Armstrong"
+
+# Conventions for `from _ import _ as _`
+[tool.ruff.lint.flake8-import-conventions.aliases]
+matplotlib = "mpl"
+"matplotlib.pyplot" = "plt"
+"matplotlib.cm" = "cm"
+numpy = "np"
+pandas = "pd"
+tensorflow = "tf"
+pytorch = "tch"
+
+# Type Checking
+[tool.ruff.lint.flake8-type-checking]
+# Move type-specific imports into an if statement
+# By placing some type annotations in quotes
+quote-annotations = true
+# Be strict with type-specific imports
+strict = true
+
+# --- ISort ---
+[tool.ruff.lint.isort]
+case-sensitive = true
+combine-as-imports = true
+force-sort-within-sections = true
+force-wrap-aliases = true
+from-first = true
+length-sort = true 
+length-sort-straight = true 
+
+# --- PyDocStyle ---
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+ignore-decorators = ["typing.overload"]
