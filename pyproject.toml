@@ -97,7 +97,8 @@ fixable = ["ALL"]
 # Except these rules
 unfixable = [
     "F401", # unused-import, will remove unused imports
-    "F841" # unused-variable, will remove unused variables not prepended with an `_`
+    "F841", # unused-variable, will remove unused variables not prepended with an `_`
+    "T201", # Print statements
 ]
 
 # --- Flake8 ---
