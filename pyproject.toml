@@ -35,6 +35,8 @@ suPAErnova = { workspace = true }
 
 # --- LSP: BasedPyRight ---
 [tool.basedpyright]
+typeCheckingMode = "all"
+
 # Type Evaluation Settings
 analyzeUnannotatedFunctions = true
 strictParameterNoneValue = true
@@ -57,6 +59,9 @@ reportUnusedCallResult = false
 # Don't report when objects are of type Any
 reportAny = false
 reportExplicitAny = false
+
+# Don't report missing type stubs, as many packages don't include them
+reportMissingTypeStubs = false
 
 
 # --- CMP: Ruff ---
